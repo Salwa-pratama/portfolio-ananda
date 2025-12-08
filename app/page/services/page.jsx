@@ -1,7 +1,8 @@
-"use client"
+"use client";
 
 import { memo } from "react";
 import { motion } from "framer-motion";
+import Maintenance from "@/components/Maintenance";
 const Services = () => {
   return (
     <motion.section
@@ -11,7 +12,7 @@ const Services = () => {
         transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
       }}
     >
-      Services
+      <Maintenance />
     </motion.section>
   );
 };

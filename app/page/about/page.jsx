@@ -1,6 +1,7 @@
-"use client"
+"use client";
 import { memo } from "react";
 import { motion } from "framer-motion";
+import Maintenance from "@/components/Maintenance";
 const About = () => {
   return (
     <motion.section
@@ -10,7 +11,7 @@ const About = () => {
         transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
       }}
     >
-      About
+      <Maintenance />
     </motion.section>
   );
 };
