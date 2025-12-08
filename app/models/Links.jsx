@@ -1,3 +1,10 @@
+import {
+  BiLogoFacebook,
+  BiLogoInstagram,
+  BiLogoGithub,
+  BiLogoLinkedin,
+} from "react-icons/bi";
+
 export const links = [
   {
     name: "Home",
@@ -18,5 +25,24 @@ export const links = [
   {
     name: "Contact",
     path: "/contact",
+  },
+];
+
+export const socialsLink = [
+  {
+    icon: <BiLogoFacebook />,
+    path: "#",
+  },
+  {
+    icon: <BiLogoInstagram />,
+    path: "#",
+  },
+  {
+    icon: <BiLogoGithub />,
+    path: "#",
+  },
+  {
+    icon: <BiLogoLinkedin />,
+    path: "#",
   },
 ];

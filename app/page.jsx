@@ -2,9 +2,13 @@
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import Image from "next/image";
+import { MdArrowOutward } from "react-icons/md";
+import { HiOutlinePhone, HiOutlineMail } from "react-icons/hi";
 // components
 import Blob from "@/components/Blob";
 import avatarImg from "@/public/assets/avatar3.png";
+import Socials from "@/components/Socials";
+import Pattern from "@/components/Pattern";
 
 const Home = () => {
   return (
@@ -16,6 +20,8 @@ const Home = () => {
       }}
       className="h-screen flex items-center "
     >
+      {/* Pattern */}
+      <Pattern />
       <div className="flex flex-col xl:flex-row items-center justify-between w-full">
         {/* Text */}
 
@@ -42,12 +48,39 @@ const Home = () => {
             experiences.
           </p>
           <button className="btn btn-lg btn-accent mb-16">
-            <div>
-              <span>Let's talk</span>
+            <div className="flex gap-3  items-center">
+              <span>Let's talk.</span>
+              <MdArrowOutward className="text-xl" />
             </div>
           </button>
+          {/* Contact Info */}
+          <div className="flex flex-col xl:flex-row  xl:items-center gap-4 xl:gap-8 mb-12 xl:mb-0">
+            {/* Phone */}
+            <div className="flex justify-center xl:justify-items-start items-center gap-2 text-lg ">
+              <span className="text-accent">
+                <HiOutlinePhone className="text-xl" />
+              </span>
+              <span>+62 8986-372-441</span>
+            </div>
+            {/* Mail */}
+            <div className="flex items-center gap-2 text-lg ">
+              <span className="text-accent">
+                <HiOutlineMail className="text-xl" />
+              </span>
+              <span>nandev1915@gmail.com</span>
+            </div>
+          </div>
+          {/* Socials */}
+          <Socials
+            containerStyles={
+              "flex 2xl:flex-col gap-6 xl:hidden 2xl:flex 2xl:absolute 2xl:top-1/2 2xl:right-2 2xl:transform  2xl:-translate-x-1/2 2xl:-translate-y-1/2"
+            }
+            iconStyles={
+              "bg-accent text-white hover:bg-accent-hover transition w-[48] h-[48] text-[22px] flex items-center justify-center rounded-full cursor-pointer"
+            }
+          />
         </div>
-        <div className="hidden xl:block flex-1 relative z-20">
+        <div className="hidden xl:block flex-1 relative z-20 mr-15">
           {/* blobs */}
           <Blob containerStyle="w-[560px] h-[560px]" />
           {/* avatar img */}
@@ -75,14 +108,6 @@ const Home = () => {
               className="rounded-full top-30"
             />
           </div>
-          {/* <Image
-            src={avatarImg}
-            alt=""
-            width={440}
-            height={600}
-            quality={100}
-            className="absolute -top-37 left-[100px] rounded-full"
-          /> */}
         </div>
       </div>
     </motion.section>
