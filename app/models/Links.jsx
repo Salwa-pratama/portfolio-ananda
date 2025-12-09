@@ -46,3 +46,18 @@ export const socialsLink = [
     path: "https://www.linkedin.com/in/nan-dev-2770a2364?utm_source=share_via&utm_content=profile&utm_medium=member_android",
   },
 ];
+
+export const Quotes = [
+  {
+    message: "Menjadi pribadi yang lebih baik setiap harinya",
+    name: "Ananda",
+  },
+  {
+    message: "Menjadi pribadi yang lebih baik setiap harinya",
+    name: "Ananda",
+  },
+  {
+    message: "Menjadi pribadi yang lebih baik setiap harinya",
+    name: "Ananda",
+  },
+];
