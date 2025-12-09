@@ -9,6 +9,8 @@ import Blob from "@/components/Blob";
 import avatarImg from "@/public/assets/avatar3.png";
 import Socials from "@/components/Socials";
 import Pattern from "@/components/Pattern";
+import Alert from "@/components/ui/alert";
+import { useState } from "react";
 
 const Home = () => {
   return (
@@ -109,6 +111,7 @@ const Home = () => {
             />
           </div>
         </div>
+        {/* Alert Donwload cv */}
       </div>
     </motion.section>
   );

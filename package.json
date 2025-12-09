@@ -1,6 +1,9 @@
 {
   "name": "portfolio-ananda",
-  "version": "0.1.0",
+  "version": "1.0",
+  "description": "Created at 2025",
+  "author": "Ananda",
+  "license" : "MIT",
   "private": true,
   "scripts": {
     "dev": "next dev",

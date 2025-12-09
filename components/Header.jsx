@@ -1,10 +1,13 @@
-import { Children, memo } from "react";
+"use client"
+import { Children, memo, useState } from "react";
 // components
 import Logo from "./Logo";
 import Socials from "./Socials";
 import { CiMenuFries } from "react-icons/ci";
 import { MdArrowOutward, MdFileDownload } from "react-icons/md";
 import NavLinks from "./NavLinks";
+import Alert from "./ui/alert";
+import { downloadBlob } from "@/app/utils/downloadFile";
 
 import {
   Sheet,
@@ -17,6 +20,45 @@ import {
 } from "./ui/sheet";
 
 const Header = () => {
+  const [showAlert, setShowAlert] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [alertText, setAlertText] = useState("Download Successfully!");
+
+  const handleDownloadCV = async () => {
+    try {
+      setIsLoading(true);
+      // Path ke file di public
+      const fileUrl = "/assets/cv.pdf";
+      // Fetch file sebagai blob
+      const res = await fetch(fileUrl, {});
+      if (!res.ok) {
+        throw new Error(`HTTP ${res.status}`);
+      }
+      const blob = await res.blob();
+
+      const cd = res.headers.get("content-description");
+      let filename = "cv.pdf";
+      if (cd) {
+        const match = cd.match(/filename\*?=(?:UTF-8'')?["']?([^;"']+)/);
+        if (match && match[1]) filename = decodeURIComponent(match[1]);
+      }
+      setTimeout(() => setIsLoading(false), 1000);
+
+      // download
+      downloadBlob(blob, filename);
+
+      // show success alert
+      setAlertText("Download berhasil!");
+      setShowAlert(true);
+    } catch (err) {
+      console.error("Download CV error:", err);
+      setAlertText("Download gagal. Coba lagi.");
+      setShowAlert(true);
+    } finally {
+      // tunggu sebentar supaya user lihat animasi selesai
+      setTimeout(() => setIsLoading(false), 1000);
+    }
+  };
   return (
     <header className="2xl:hidden absolute z-40 left-0 top-0 right-0">
       <div className="container mx-auto ">
@@ -42,7 +84,10 @@ const Header = () => {
               </SheetHeader>
               <NavLinks containerStyles={"flex flex-col gap-8 max-w-[100px]"} />
               <div>
-                <button className="btn btn-lg btn-tertiary mb-16">
+                <button
+                  onClick={handleDownloadCV}
+                  className="btn btn-lg btn-tertiary mb-16"
+                >
                   <div className="flex gap-3  items-center">
                     <span>Download CV</span>
                     <MdFileDownload className="text-xl" />
@@ -58,6 +103,12 @@ const Header = () => {
             </SheetContent>
           </Sheet>
         </div>
+        {/* Alert Succes Download Cv */}
+        <Alert
+          Text={alertText}
+          show={showAlert}
+          onClose={() => setShowAlert(false)}
+        />
       </div>
     </header>
   );
