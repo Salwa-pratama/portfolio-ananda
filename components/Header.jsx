@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { Children, memo, useState } from "react";
 // components
 import Logo from "./Logo";
@@ -38,6 +38,12 @@ const Header = () => {
 
       const cd = res.headers.get("content-description");
       let filename = "cv.pdf";
+      const confirmDownload = window.confirm(
+        `Apakah kamu yakin ingin mendownload file "${filename}"?`
+      );
+      if (!confirmDownload) {
+        return;
+      }
       if (cd) {
         const match = cd.match(/filename\*?=(?:UTF-8'')?["']?([^;"']+)/);
         if (match && match[1]) filename = decodeURIComponent(match[1]);
