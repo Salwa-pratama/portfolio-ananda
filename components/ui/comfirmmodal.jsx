@@ -11,9 +11,9 @@ export default function ConfirmModal({ open, onCancel, onConfirm, fileName }) {
         animate={{ scale: 1, opacity: 1 }}
         className="bg-secondary p-6 rounded-2xl w-[320px] shadow-lg"
       >
-        <h3 className="text-xl font-semibold text-accent mb-2">Ananda says</h3>
+        <h3 className="text-xl font-semibold text-white mb-2">Ananda says</h3>
         <p className="opacity-80 mb-6">
-          Yakin ingin mendownload{" "}
+          Want To Downlad my CV ?{" "}
           <span className="text-accent">{fileName}</span> ?
         </p>
 
