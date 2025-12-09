@@ -8,7 +8,7 @@ import { MdArrowOutward, MdFileDownload } from "react-icons/md";
 import NavLinks from "./NavLinks";
 import Alert from "./ui/alert";
 import { downloadBlob } from "@/app/utils/downloadFile";
-
+import ConfirmModal from "./ui/comfirmmodal";
 import {
   Sheet,
   SheetContent,
@@ -23,7 +23,7 @@ const Header = () => {
   const [showAlert, setShowAlert] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [alertText, setAlertText] = useState("Download Successfully!");
-
+  const [openModal, setOpenModal] = useState(false);
   const handleDownloadCV = async () => {
     try {
       setIsLoading(true);
@@ -38,12 +38,7 @@ const Header = () => {
 
       const cd = res.headers.get("content-description");
       let filename = "cv.pdf";
-      const confirmDownload = window.confirm(
-        `Apakah kamu yakin ingin mendownload file "${filename}"?`
-      );
-      if (!confirmDownload) {
-        return;
-      }
+
       if (cd) {
         const match = cd.match(/filename\*?=(?:UTF-8'')?["']?([^;"']+)/);
         if (match && match[1]) filename = decodeURIComponent(match[1]);
@@ -90,8 +85,17 @@ const Header = () => {
               </SheetHeader>
               <NavLinks containerStyles={"flex flex-col gap-8 max-w-[100px]"} />
               <div>
+                <ConfirmModal
+                  open={openModal}
+                  fileName={"Ananda-CV.pdf"}
+                  onCancel={() => setOpenModal(false)}
+                  onConfirm={() => {
+                    setOpenModal(false);
+                    handleDownloadCV();
+                  }}
+                />
                 <button
-                  onClick={handleDownloadCV}
+                  onClick={() => setOpenModal(true)}
                   className="btn btn-lg btn-tertiary mb-16"
                 >
                   <div className="flex gap-3  items-center">

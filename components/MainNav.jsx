@@ -9,12 +9,13 @@ import Alert from "./ui/alert";
 import NavLinks from "./NavLinks";
 import packageJson from "../package.json";
 import { downloadBlob } from "@/app/utils/downloadFile";
+import ConfirmModal from "./ui/comfirmmodal";
 
 export default function MainNav() {
   const [showAlert, setShowAlert] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [alertText, setAlertText] = useState("Download Successfully!");
-
+  const [openModal, setOpenModal] = useState(false);
   const handleDownloadCV = async () => {
     try {
       setIsLoading(true);
@@ -29,12 +30,7 @@ export default function MainNav() {
 
       const cd = res.headers.get("content-description");
       let filename = "cv.pdf";
-      const confirmDownload = window.confirm(
-        `Apakah kamu yakin ingin mendownload file "${filename}"?`
-      );
-      if (!confirmDownload) {
-        return;
-      }
+
       if (cd) {
         const match = cd.match(/filename\*?=(?:UTF-8'')?["']?([^;"']+)/);
         if (match && match[1]) filename = decodeURIComponent(match[1]);
@@ -62,8 +58,17 @@ export default function MainNav() {
         <Logo />
         <NavLinks containerStyles={" flex flex-col gap-6"} />
         <div className="mb-0">
+          <ConfirmModal
+            open={openModal}
+            fileName={"Ananda-CV.pdf"}
+            onCancel={() => setOpenModal(false)}
+            onConfirm={() => {
+              setOpenModal(false);
+              handleDownloadCV();
+            }}
+          />
           <button
-            onClick={handleDownloadCV}
+            onClick={() => setOpenModal(true)}
             className="btn btn-lg btn-tertiary mb-0"
           >
             <div className="flex gap-3  items-center">

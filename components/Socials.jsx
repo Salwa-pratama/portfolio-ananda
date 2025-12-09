@@ -1,14 +1,21 @@
 import { memo } from "react";
 import { socialsLink } from "@/app/models/Links";
+import Link from "next/link";
 
 const Socials = ({ containerStyles, iconStyles }) => {
   return (
     <div className={containerStyles}>
       {socialsLink.map((item, i) => {
         return (
-          <div key={i} className={iconStyles}>
+          <Link
+            href={item.path}
+            key={i}
+            className={iconStyles}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {item.icon}
-          </div>
+          </Link>
         );
       })}
     </div>

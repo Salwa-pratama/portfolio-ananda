@@ -31,18 +31,18 @@ export const links = [
 export const socialsLink = [
   {
     icon: <BiLogoFacebook />,
-    path: "#",
+    path: "https://www.facebook.com/share/1A5coXysXZ/",
   },
   {
     icon: <BiLogoInstagram />,
-    path: "#",
+    path: "https://www.instagram.com/anndaslwaa?igsh=aDY1Y2RudmVoNzNk",
   },
   {
     icon: <BiLogoGithub />,
-    path: "#",
+    path: "https://github.com/Salwa-pratama",
   },
   {
     icon: <BiLogoLinkedin />,
-    path: "#",
+    path: "https://www.linkedin.com/in/nan-dev-2770a2364?utm_source=share_via&utm_content=profile&utm_medium=member_android",
   },
 ];
