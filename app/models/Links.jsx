@@ -49,7 +49,7 @@ export const socialsLink = [
 
 export const Quotes = [
   {
-    message: "Menjadi pribadi yang lebih baik setiap harinya",
+    message: "Menjadi pribadi yang lebih baik setiap harinya dan disana kikan bisa menjadi sesorang yang okelah, jadi kita harus begitu dan bgini kalau kita mau begitu soalnya kalau ingin bisa begitu kita harus begini",
     name: "Ananda",
   },
   {

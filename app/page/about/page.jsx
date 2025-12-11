@@ -10,6 +10,7 @@ import Socials from "@/components/Socials";
 // components
 import Stats from "@/components/Stats";
 import Testimonials from "@/components/Testimonials";
+import Info from "@/components/Info";
 
 const About = () => {
   return (
@@ -69,7 +70,7 @@ const About = () => {
           </div>
 
           {/* Scroll area */}
-          <ScrollArea className={"w-full  bg-blue-50/10 container h-[680px]"}>
+          <ScrollArea className={"w-full   container h-[680px]"}>
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-2 h-2 bg-accent rounded-full"></div>
@@ -87,7 +88,7 @@ const About = () => {
               <div className="flex flex-col mt-5 items-start gap-16">
                 <Stats />
                 <Testimonials />
-                <div>Info</div>
+                <Info />
                 <div>journey</div>
                 <div>skills</div>
               </div>
