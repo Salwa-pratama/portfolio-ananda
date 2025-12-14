@@ -9,7 +9,8 @@ const Stats = () => {
       <div className="flex gap-4">
         <div className="text-5xl font-bold text-accent flex">
           <CountUp
-            end={12}
+            start={0}
+            end={2}
             duration={5}
             delay={2}
             className="block w-[60px] "
