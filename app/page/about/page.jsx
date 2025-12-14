@@ -11,6 +11,7 @@ import Socials from "@/components/Socials";
 import Stats from "@/components/Stats";
 import Testimonials from "@/components/Testimonials";
 import Info from "@/components/Info";
+import Skills from "@/components/Skills";
 
 const About = () => {
   return (
@@ -90,7 +91,7 @@ const About = () => {
                 <Testimonials />
                 <Info />
                 <div>journey</div>
-                <div>skills</div>
+                <Skills />
               </div>
             </div>
           </ScrollArea>

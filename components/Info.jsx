@@ -1,9 +1,9 @@
 import { memo } from "react";
-import { HiOutlineMail, HiOutlineUser, HiOutlinedMa} from "react-icons/hi";
+import { HiOutlineMail, HiOutlineUser, HiOutlinedMa } from "react-icons/hi";
 
 const Info = () => {
   return (
-    <div className="bg-blue-100/50 w-full">
+    <div className=" w-full">
       <div className="flex justify-between p-2">
         <div className="w-full">
           <h3 className="h4 text-accent">Name : </h3>
