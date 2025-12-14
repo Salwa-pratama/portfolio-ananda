@@ -21,12 +21,12 @@ const About = () => {
         opacity: 1,
         transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
       }}
-      className="h-screen flex items-center"
+      className="h-screen flex items-center  "
     >
-      <div className="container mx-auto">
+      <div className="container mx-auto ">
         <div className="flex flex-col xl:flex-row items-center gap-24 w-full h-[680px]">
           {/* Ini Hero About */}
-          <div className="w-1/3">
+          <div className="w-1/3 ">
             <div className="hidden xl:block flex-1 w-full  relative z-20 mr-15">
               {/* blobs */}
               <Blob containerStyle="w-full  mx-auto " />
@@ -71,26 +71,27 @@ const About = () => {
           </div>
 
           {/* Scroll area */}
-          <ScrollArea className={"w-full   container h-[680px]"}>
-            <div>
-              <div className="flex items-center gap-3 mb-4">
+          <ScrollArea
+            className={"w-full    xl:h-[700px] h-[550px] mt-0 p-0  z-10 "}
+          >
+            <div className="mx-auto w-fit  ">
+              <div className="flex items-center gap-3 mb-4 p-2">
                 <div className="w-2 h-2 bg-accent rounded-full"></div>
                 <p>About Me</p>
               </div>
-              <h2 className="h2 mb-6">
+              <h2 className="h2 mb-6 p-2">
                 <span className="text-accent">Ananda</span> Salwa
               </h2>
-              <p className="p text-justify">
+              <p className="p text-justify p-2">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam
                 facilis, voluptates maxime laboriosam atque beatae iusto qui
                 repellat nam amet delectus porro nemo libero vero doloremque non
                 dolorem quia maiores.
               </p>
-              <div className="flex flex-col mt-5 items-start gap-16">
+              <div className="flex flex-col mt-5 items-start gap-16 p-2">
                 <Stats />
                 <Testimonials />
                 <Info />
-                <div>journey</div>
                 <Skills />
               </div>
             </div>

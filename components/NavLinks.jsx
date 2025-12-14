@@ -13,30 +13,37 @@ export default function NavLinks({ containerStyles }) {
   return (
     <ul className={containerStyles}>
       {links.map((link, index) => {
-        // Determine if the current link matches the active
         const isActive = cleanPath === link.path;
-        console.log(pathname);
 
-        // Calculate the number of characters in the link name
-        const charLength = link.name.length;
-        // Set th line with based on character length
-        const lineWidth = charLength > 5 ? "after:w-[120%]" : "after:w-[90%]";
-        console.log(charLength);
         return (
           <Link
             href={link.name === "Home" ? "/" : `/page${link.path}`}
             key={index}
-            className={`relative text-lg uppercase text-white
-                ${
-                  isActive &&
-                  `after:content-[''] after:block after:absolute
-                after:left-0 after:top-1/2 ${lineWidth} after:h-1 after:bg-accent after:-translate-y-1/2 after:z-0`
-                }`}
+            className="
+              relative px-2 py-1 text-lg uppercase text-white
+              transition-colors duration-300
+              after:absolute after:inset-0 after:rounded-md
+              after:bg-accent-hover after:origin-left
+              after:scale-x-0 after:opacity-0
+              after:transition-transform after:duration-300
+
+            "
           >
-            <span className="relative z-10">{link.name}</span>
+            <span
+              className={`relative z-10 ${isActive ? "font-semibold" : ""}`}
+            >
+              {link.name}
+            </span>
+
+            {isActive && (
+              <span className="absolute inset-0 rounded-md bg-accent-hover -z-0" />
+            )}
           </Link>
         );
       })}
     </ul>
   );
 }
+
+// after:content-[''] after:block after:absolute
+//                 after:left-0 after:top-1/2 ${lineWidth} after:h-1 after:bg-accent after:-translate-y-1/2 after:z-0

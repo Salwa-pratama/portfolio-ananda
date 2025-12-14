@@ -39,12 +39,12 @@ const Home = () => {
               ]}
               wrapper="span"
               speed={40}
-              className="text-accent"
+              className="text-accent xl:text-[40px] text-[20px]"
               repeat={Infinity}
               cursor={false}
             />
           </h1>
-          <p className="max-w-[500px] mb-11">
+          <p className="max-w-[500px] mb-11 text-[12px] xl:text-[15px]">
             I build cisually captivating, user-friendly websites and web apps
             that transform your ideas into seamless, engaging digital
             experiences.
@@ -60,16 +60,16 @@ const Home = () => {
             {/* Phone */}
             <div className="flex justify-center xl:justify-items-start items-center gap-2 text-lg ">
               <span className="text-accent">
-                <HiOutlinePhone className="text-xl" />
+                <HiOutlinePhone className="text-xm " />
               </span>
-              <span>+62 8986-372-441</span>
+              <span className="text-sm ">+62 8986-372-441</span>
             </div>
             {/* Mail */}
             <div className="flex items-center gap-2 text-lg ">
               <span className="text-accent">
-                <HiOutlineMail className="text-xl" />
+                <HiOutlineMail className="text-sm " />
               </span>
-              <span>nandev1915@gmail.com</span>
+              <span className="text-sm ">nandev1915@gmail.com</span>
             </div>
           </div>
           {/* Socials */}

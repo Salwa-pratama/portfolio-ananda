@@ -64,7 +64,7 @@ body {
 }
 
 .h1 {
-  @apply text-[40px] md:text-[52px] xl:text-[50px] leading-none
+  @apply text-[25px] md:text-[52px] xl:text-[50px] leading-none
   tracking-tight font-extrabold;
 }
 
@@ -83,11 +83,11 @@ body {
 }
 
 .p {
-  @apply text-[15px] md:text-[18px] font-medium leading-snug
+  @apply text-[15px] md:text-[18px] font-medium leading-snug;
 }
 
 .container {
-  @apply px-[15px];
+  @apply xl:px-[15px];
 }
 
 /* Btns */
